@@ -18,16 +18,16 @@
     %dt= @opportunity.probability ? @opportunity.probability.to_s + "%" : "N/A"
     %tt Probability:
   %li
-    %dt= @opportunity.amount ? number_to_currency(@opportunity.amount || 0, :precision => 0) : "N/A"
+    %dt= @opportunity.amount ? number_to_currency(@opportunity.amount || 0, :precision => 0, :unit => "Rs.") : "N/A"
     %tt Amount:
   %li
-    %dt= @opportunity.discount ? number_to_currency(@opportunity.discount || 0, :precision => 0) : "N/A"
+    %dt= @opportunity.discount ? number_to_currency(@opportunity.discount || 0, :precision => 0, :unit => "Rs.") : "N/A"
     - if @opportunity.amount && @opportunity.discount
       %tt== Discount (#{number_to_percentage(@opportunity.discount / @opportunity.amount * 100, :precision => 1)}):
     - else
       %tt Discount:
   %li
-    %dt= @opportunity.amount ? number_to_currency(@opportunity.weighted_amount || 0, :precision => 0) : "N/A"
+    %dt= @opportunity.amount ? number_to_currency(@opportunity.weighted_amount || 0, :precision => 0, :unit => "Rs.") : "N/A"
     %tt Weighted amount:
   %li
     %dt= (@opportunity.assigned_to ? @opportunity.assignee.full_name : @opportunity.user.full_name).shorten
