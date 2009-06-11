@@ -34,6 +34,7 @@ role :app, "8.12.160.242"
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
+   run "mkdir #{deploy_to}/shared"
    run "mkdir #{deploy_to}/shared/log"
    run "touch #{deploy_to}/shared/log/production.log"
    run "touch #{current_path}/tmp/restart.txt"
