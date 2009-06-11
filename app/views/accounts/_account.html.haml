@@ -1,7 +1,7 @@
 - amount = account.opportunities.sum(:amount)
 %li[account]{ highlightable(dom_id(account, :tools)) }
   - if amount != 0.0
-    .strip.some= number_to_currency(amount, :precision => 0)
+    .strip.some= number_to_currency(amount, :precision => 0, :unit => "Rs.")
   - else
     .strip.none None
   %div
