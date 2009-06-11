@@ -19,11 +19,11 @@
           = f.text_field :target_conversion, :style => "width:110px; text-align:right;"
         %td= spacer
         %td{ :valign => :top }
-          .label Revenue ($):
+          .label Revenue (Rs.):
           = f.text_field :target_revenue, :value => @campaign.target_revenue ? @campaign.target_revenue.to_i : "", :style => "width:110px; text-align:right;"
         %td= spacer
         %td{ :valign => :top }
-          .label Budget ($):
+          .label Budget (Rs.):
           = f.text_field :budget, :value => @campaign.budget ? @campaign.budget.to_i : "", :style => "width:110px; text-align:right;"
       %tr
         %td{ :colspan => 7, :valign => :top }

@@ -9,7 +9,7 @@
 %dt
   - unless objectives.empty?
     %b Actual:
-  = number_to_currency(campaign.revenue || 0, :precision => 0) << " in revenue | "
+  = number_to_currency(campaign.revenue || 0, :precision => 0, :unit => "Rs. ") << " in revenue | "
   = pluralize(campaign.leads_count || 0, "lead") << " | "
   = pluralize(campaign.opportunities_count || 0, "opportunity")
   - if campaign.opportunities_count? && campaign.leads_count? && campaign.leads_count != 0
